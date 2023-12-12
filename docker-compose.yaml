@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./tifinagh-converter-api
+      dockerfile: dockerfile
+    image: rachidbr/tifinagh-converter-backend:1.0.0
+    ports:
+      - "3000:3000"
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./tifinagh-converter-frontend-react
+      dockerfile: dockerfile
+    image: rachidbr/tifinagh-converter-frontend:1.1.0
+    ports:
+      - "8080:8080"
